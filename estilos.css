@@ -1,0 +1,924 @@
+
+/* =====================================
+   1. CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f9f5;
+    color: #244638;
+}
+
+section[id] {
+    scroll-margin-top: 35px;
+}
+
+a {
+    transition: 0.3s ease;
+}
+
+/* =====================================
+   2. ENCABEZADO Y MENÚ
+===================================== */
+
+.encabezado {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 4%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #00000008;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 185px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 23px;
+}
+
+.menu a {
+    color: #607469;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: #24734f;
+    font-weight: bold;
+}
+
+/* =====================================
+   3. PORTADA PRINCIPAL
+===================================== */
+
+.portada {
+    background: #f1efe4;
+    min-height: 640px;
+    padding: 65px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.portada-texto {
+    max-width: 650px;
+}
+
+.etiqueta,
+.titulo-seccion > span {
+    display: inline-block;
+    color: #28734e;
+    background: #e3eadb;
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.portada h1 {
+    color: #173f32;
+    font-size: clamp(42px, 4.5vw, 65px);
+    line-height: 1.12;
+    margin: 28px 0;
+    font-weight: 750;
+}
+
+.portada-texto > p {
+    color: #69776d;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+/* =====================================
+   4. BOTONES
+===================================== */
+
+.botones-portada {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.boton-principal,
+.boton-secundario {
+    display: inline-block;
+    padding: 15px 23px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.boton-principal {
+    background: #194c38;
+    color: white;
+}
+
+.boton-principal:hover {
+    background: #287a52;
+    transform: translateY(-3px);
+}
+
+.boton-secundario {
+    background: white;
+    color: #194c38;
+    border: 1px solid #d6dfd5;
+}
+
+.boton-secundario:hover {
+    background: #e5eddf;
+}
+
+.enlace-verde {
+    display: inline-block;
+    color: #28734e;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.enlace-verde:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   5. IMAGEN DE PORTADA
+===================================== */
+
+.portada-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.portada-imagen > img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    object-fit: contain;
+}
+
+.mensaje-local {
+    width: 80%;
+    background: white;
+    padding: 18px 22px;
+    border-radius: 15px;
+    margin-top: 10px;
+    box-shadow: 0 5px 20px #0000000b;
+}
+
+.mensaje-local strong {
+    color: #194c38;
+    font-size: 15px;
+}
+
+.mensaje-local p {
+    margin: 7px 0 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+/* =====================================
+   6. TRES PASOS
+===================================== */
+
+.pasos {
+    max-width: 1250px;
+    margin: 35px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.pasos article {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.pasos article > span {
+    color: #37815a;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.pasos h3 {
+    margin: 0 0 7px;
+    color: #194c38;
+    font-size: 17px;
+}
+
+.pasos p {
+    margin: 0;
+    color: #738078;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   7. SECCIONES GENERALES
+===================================== */
+
+.seccion {
+    max-width: 1250px;
+    margin: 75px auto;
+    padding: 0 25px;
+}
+
+.titulo-seccion {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.titulo-seccion h2 {
+    color: #194c38;
+    font-size: clamp(28px, 3vw, 38px);
+    margin: 20px 0 12px;
+}
+
+.titulo-seccion p {
+    color: #718078;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   8. TARJETAS DE MATERIALES
+===================================== */
+
+.contenedores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.contenedor-residuo {
+    background: white;
+    padding: 28px 20px;
+    text-align: center;
+    border-radius: 17px;
+    border-top: 5px solid #31965c;
+    box-shadow: 0 5px 18px #0000000b;
+    transition: 0.3s ease;
+}
+
+.contenedor-residuo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #00000012;
+}
+
+.contenedor-residuo .emoji {
+    font-size: 43px;
+    margin-bottom: 12px;
+}
+
+.contenedor-residuo h3 {
+    color: #194c38;
+    margin: 10px 0;
+}
+
+.contenedor-residuo p {
+    color: #718078;
+    font-size: 14px;
+}
+
+/* =====================================
+   9. APRENDE A RECICLAR
+===================================== */
+
+.aprende {
+    max-width: 1250px;
+}
+
+.habito {
+    background: #e9f0e4;
+    padding: 30px;
+    border-radius: 17px;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.habito h3 {
+    color: #194c38;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.habito p {
+    color: #607469;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: auto;
+}
+
+.subtitulo {
+    color: #194c38;
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.cuatro-pasos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.cuatro-pasos article {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000009;
+    border: 1px solid #edf0e9;
+}
+
+.cuatro-pasos article > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #dfeadd;
+    color: #28734e;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cuatro-pasos h3 {
+    color: #194c38;
+    margin-bottom: 8px;
+}
+
+.cuatro-pasos p {
+    color: #718078;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =====================================
+   10. MATERIALES QUE SÍ Y NO
+===================================== */
+
+.guia-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.guia-card {
+    background: white;
+    padding: 30px;
+    border-radius: 17px;
+    border-left: 5px solid #3c9763;
+    box-shadow: 0 4px 15px #00000008;
+}
+
+.guia-card h3 {
+    color: #24734f;
+    margin-top: 0;
+}
+
+.guia-card ul {
+    padding-left: 22px;
+}
+
+.guia-card li {
+    color: #63756a;
+    margin-bottom: 13px;
+    line-height: 1.6;
+}
+
+.no-reciclables {
+    border-left-color: #c68c69;
+}
+
+.no-reciclables h3 {
+    color: #a76747;
+}
+
+.no-reciclables p {
+    color: #718078;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* =====================================
+   11. MENSAJE FINAL DE RECICLAJE
+===================================== */
+
+.mensaje-final {
+    margin-top: 40px;
+    padding: 40px 25px;
+    text-align: center;
+    background: #194c38;
+    border-radius: 20px;
+    color: white;
+}
+
+.mensaje-final h3 {
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.mensaje-final p {
+    color: #e0eae1;
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+}
+
+.mensaje-final .boton-principal {
+    background: white;
+    color: #194c38;
+}
+
+/* =====================================
+   12. ECOPUNTOS Y MAPA
+===================================== */
+
+.mapa {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px #00000009;
+}
+
+.mapa h3 {
+    color: #194c38;
+}
+
+.mapa p {
+    color: #718078;
+}
+
+#mapaEcoPuntos {
+    min-height: 230px;
+    margin-top: 20px;
+    border-radius: 13px;
+    background: #e8eee4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #194c38;
+}
+
+#mapaEcoPuntos span {
+    color: #718078;
+    font-size: 13px;
+}
+
+.tarjetas-ecopuntos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.tarjetas-ecopuntos article {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px #00000009;
+}
+
+.tarjetas-ecopuntos h3 {
+    color: #28734e;
+}
+
+.tarjetas-ecopuntos p {
+    color: #718078;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =====================================
+   13. REGISTRO DE RESIDUOS
+===================================== */
+
+.registro-seccion {
+    max-width: 1250px;
+    padding: 50px 35px;
+    background: #edf1e8;
+    border-radius: 22px;
+}
+
+.registro-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.registro-contenido > div:first-child {
+    padding: 20px;
+}
+
+.registro-contenido h3 {
+    color: #194c38;
+    font-size: 24px;
+}
+
+.registro-contenido > div:first-child p {
+    color: #63756a;
+    line-height: 1.7;
+}
+
+/* =====================================
+   14. PANELES Y FORMULARIOS
+===================================== */
+
+.panel {
+    background: white;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 17px;
+    box-shadow: 0 4px 15px #0000000b;
+}
+
+.panel h3 {
+    color: #194c38;
+}
+
+.panel p {
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+form label {
+    font-weight: bold;
+    color: #294b3c;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd9ce;
+    border-radius: 9px;
+    font-size: 15px;
+    background: white;
+    color: #263b2c;
+    font-family: Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #8ab99c;
+    border-color: #218653;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* =====================================
+   15. BOTONES GENERALES
+===================================== */
+
+button {
+    background: #24734f;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 3px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #194c38;
+    transform: translateY(-2px);
+}
+
+.secundario {
+    background: #777;
+}
+
+/* =====================================
+   16. ESTADÍSTICAS
+===================================== */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    background: #e6eee2;
+    color: #24734f;
+    padding: 27px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.tarjeta h3 {
+    font-size: 28px;
+    margin: 5px;
+}
+
+.tarjeta p {
+    margin-bottom: 5px;
+}
+
+/* =====================================
+   17. HISTORIAL Y TABLAS
+===================================== */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: white;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8e2;
+    text-align: left;
+}
+
+th {
+    background: #e9f1e8;
+    color: #176b4c;
+}
+
+/* =====================================
+   18. GRÁFICOS
+===================================== */
+
+.barra-fondo {
+    background: #e5e5e5;
+    height: 18px;
+    border-radius: 10px;
+    margin: 8px 0 16px;
+    overflow: hidden;
+}
+
+.barra {
+    background: #26965b;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.grafico-svg {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* =====================================
+   19. CONTACTO
+===================================== */
+
+.contacto {
+    background: #f0f2e9;
+    max-width: 100%;
+    padding: 65px max(25px, calc((100% - 1200px) / 2));
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.contacto-contenido h3 {
+    color: #194c38;
+    font-size: 23px;
+}
+
+.contacto-contenido p {
+    color: #63756a;
+    line-height: 1.7;
+}
+
+.form-contacto {
+    background: white;
+    padding: 28px;
+    border-radius: 17px;
+    box-shadow: 0 4px 15px #00000009;
+}
+
+/* =====================================
+   20. MENSAJES DEL SISTEMA
+===================================== */
+
+#mensaje,
+#mensajeContactoResultado {
+    color: #24734f;
+    font-weight: bold;
+}
+
+/* =====================================
+   21. PIE DE PÁGINA
+===================================== */
+
+footer {
+    background: #153f32;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h3 {
+    font-size: 23px;
+    margin-top: 0;
+}
+
+footer p {
+    color: #dce8dd;
+    margin: 8px;
+    font-size: 14px;
+}
+
+/* =====================================
+   22. TABLETAS
+===================================== */
+
+@media (max-width: 1050px) {
+
+    .encabezado {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .portada {
+        gap: 25px;
+    }
+
+    .portada h1 {
+        font-size: 45px;
+    }
+
+    .cuatro-pasos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pasos {
+        margin: 25px;
+    }
+}
+
+/* =====================================
+   23. CELULARES
+===================================== */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 165px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px 17px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+        padding: 40px 22px;
+        min-height: auto;
+    }
+
+    .portada h1 {
+        font-size: 39px;
+        line-height: 1.2;
+    }
+
+    .portada-texto > p {
+        font-size: 16px;
+    }
+
+    .portada-imagen > img {
+        max-width: 100%;
+    }
+
+    .mensaje-local {
+        width: 100%;
+    }
+
+    .pasos {
+        grid-template-columns: 1fr;
+        margin: 20px 15px;
+        padding: 22px;
+    }
+
+    .seccion {
+        margin: 50px auto;
+        padding: 0 17px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+    .cuatro-pasos,
+    .guia-columnas,
+    .tarjetas-ecopuntos,
+    .registro-contenido,
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .registro-seccion {
+        padding: 35px 17px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .contacto {
+        padding: 45px 18px;
+    }
+
+    .form-contacto {
+        padding: 20px;
+    }
+}
